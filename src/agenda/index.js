@@ -163,6 +163,9 @@ export default class AgendaView extends Component {
     } else {
       // Support for RN O.61 (Expo 37)
       this.scrollPad.getNode().scrollTo({x: 0, y, animated});
+      if (y > 0) {
+        this.calendar.scrollToDay(this.state.selectedDay, this.calendarOffset(), true);
+      }
     }
   }
 
